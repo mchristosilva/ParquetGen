@@ -1,0 +1,17 @@
+*.pyc
+**/__pycache__/
+**/__pycache__/*.pyc
+/__pycache__/
+/__pycache__/*.pyc
+venv/
+logs/
+log/
+*.json
+*.sql
+*.ddl
+*.txt
+*.log
+*.db
+*.sqbpro
+.env
+.hintrc

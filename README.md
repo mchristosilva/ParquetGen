@@ -1,4 +1,4 @@
-📘 README.md — RedeSC Gerador de Arquivos Parquet
+📘 README.md — Gerador de Arquivos Parquet
 
 # Gerador de Arquivos Parquet
 Aplicação desktop desenvolvida em **Python + Kivy**, criada para facilitar a
@@ -17,10 +17,10 @@ A ferramenta inclui:
 
 ## 🖥️ Interface
 A aplicação possui uma interface clara e objetiva:
-- Caixa de texto para edição da query SQL  
+- Caixa de texto para edição da query SQL
 - Botões de ação (`Executar`, `Limpar`, `Copiar`, `Abrir Pasta`, `Importar Query`)  
-- Log de execução  
 - Popup de seleção de arquivos com **seletor de unidades**  
+- Log de execução
 - Placeholder no editor quando vazio  
 
 ---
@@ -54,9 +54,9 @@ Implementado via `canvas.after` para não interferir no cursor ou highlight.
 ### ✔ Importação de Arquivos SQL
 O usuário pode:
 - abrir um popup  
-- navegar entre unidades (C:, D:, E:, Z:)  
-- selecionar um arquivo `.sql`  
-- carregar e formatar automaticamente  
+- navegar entre unidades locais e unidades de rede mapeadas  
+- selecionar um arquivo `.sql`
+- carregar e formatar automaticamente
 
 O popup inclui um **seletor de unidades** acima do FileChooser.
 
@@ -65,29 +65,26 @@ O popup inclui um **seletor de unidades** acima do FileChooser.
 ### ✔ Formatação Automática de SQL
 O formatter é modular e composto por:
 
-- `tokenizer.py`  
-- `normalizer.py`  
 - `indent.py`  
-- `select_formatter.py`  
+- `normalizer.py`  
 - `processor.py`  
+- `select_formatter.py`  
+- `tokenizer.py`  
 
 O arquivo `main.py` expõe: `formatar_sql_de_arquivo(caminho)`
 
 E o editor usa: `Ctrl + Shift + F` para formatar o texto atual.
 
-✔ Execução e Geração de Parquet
+### Execução e Geração de Parquet
 A aplicação permite:
-- executar a query
-- gerar arquivos Parquet
-- abrir a pasta de saída
 - copiar a query formatada
 - executar a query
 - gerar arquivos Parquet
 - abrir a pasta de saída
-- copiar a query formatada
 
 🧩 Arquitetura do Projeto
 
+<pre>
 ParquetGen/
 │
 ├── formatter/
@@ -104,6 +101,7 @@ ParquetGen/
 ├── main.py
 ├── requirements.txt
 └── README.md
+</pre>
 
 📦 Requisitos
 - Python 3.10+
@@ -112,22 +110,22 @@ ParquetGen/
 - Pandas
 - PyArrow
 
-Instalação:
+Instalação
 `pip install -r requirements.txt`
 
 # Estrutura padrão do arquivo .env
-`DB_USERNAME=`
-`DB_PASSWORD=`
-`DB_HOST=`
-`DB_PORT=`
-`DB_SERVICE_NAME=`
-`CAMINHO_PADRAO=`
-`DB_USERNAME=`
-`DB_PASSWORD=`
-`DB_HOST=`
-`DB_PORT=`
-`DB_SERVICE_NAME=`
-`CAMINHO_PADRAO=`
+Para garantir a conexão com o banco de dados Oracle
+ e o caminho de rede padrão, deve configurar as variáveis
+ de ambiente em um arquivo .env a ser colocado na raiz do projeto
+
+ <pre>
+DB_USERNAME=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_SERVICE_NAME=
+CAMINHO_PADRAO=
+ </pre>
 
 
 ▶️ Como Executar

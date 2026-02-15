@@ -9,7 +9,6 @@ log/
 *.json
 *.sql
 *.ddl
-*.txt
 *.log
 *.db
 *.sqbpro

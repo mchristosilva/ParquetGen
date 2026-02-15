@@ -91,7 +91,7 @@ ParquetGen/
 │   ├── CONSOLA.TTF
 │   ├── CONSOLAB.TTF
 │   ├── CONSOLAI.TTF
-│   ├── CONSOLAZ.TTF
+│   └── CONSOLAZ.TTF
 │
 ├── formatter/
 │   ├── __init__.py
@@ -105,6 +105,7 @@ ParquetGen/
 ├── img
 │   └── icon.png
 │
+├── **.env**
 ├── connection.py
 ├── consulta.py
 ├── converte.py

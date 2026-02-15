@@ -117,12 +117,12 @@ Instalação:
 pip install -r requirements.txt
 
 # Estrutura padrão do arquivo .env
-- DB_USERNAME=
-- DB_PASSWORD=
-- DB_HOST=
-- DB_PORT=
-- DB_SERVICE_NAME=
-- CAMINHO_PADRAO=
+`DB_USERNAME=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_SERVICE_NAME=
+CAMINHO_PADRAO=`
 
 
 ▶️ Como Executar

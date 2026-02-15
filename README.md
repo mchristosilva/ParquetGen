@@ -153,6 +153,7 @@ ParquetGen/
 
 ## 5. 📦 Requisitos
 
+- Oracle Instant Client
 - Python 3.10+
 - Kivy
 - Pygments

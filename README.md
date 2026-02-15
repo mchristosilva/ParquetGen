@@ -71,16 +71,16 @@ O formatter é modular e composto por:
 - `select_formatter.py`  
 - `processor.py`  
 
-O arquivo `main.py` expõe:
-formatar_sql_de_arquivo(caminho)
+O arquivo `main.py` expõe: `formatar_sql_de_arquivo(caminho)`
 
-E o editor usa:
-
-Ctrl + Shift + F
-para formatar o texto atual.
+E o editor usa: `Ctrl + Shift + F` para formatar o texto atual.
 
 ✔ Execução e Geração de Parquet
 A aplicação permite:
+- executar a query
+- gerar arquivos Parquet
+- abrir a pasta de saída
+- copiar a query formatada
 - executar a query
 - gerar arquivos Parquet
 - abrir a pasta de saída
@@ -106,16 +106,22 @@ ParquetGen/
 └── README.md
 
 📦 Requisitos
-Python 3.10+
-Kivy
-Pygments
-Pandas
-PyArrow
+- Python 3.10+
+- Kivy
+- Pygments
+- Pandas
+- PyArrow
 
 Instalação:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 # Estrutura padrão do arquivo .env
+`DB_USERNAME=`
+`DB_PASSWORD=`
+`DB_HOST=`
+`DB_PORT=`
+`DB_SERVICE_NAME=`
+`CAMINHO_PADRAO=`
 `DB_USERNAME=`
 `DB_PASSWORD=`
 `DB_HOST=`
@@ -126,28 +132,28 @@ pip install -r requirements.txt
 
 ▶️ Como Executar
 `python parquetgen.py`
+`python parquetgen.py`
 
 📁 Importação de Query
-Clique em Importar Query
-Escolha a unidade (C:, D:, E:, Z:)
-Navegue até o arquivo .sql
-Clique em Carregar
-
+- Clique em Importar Query
+- Escolha a unidade (C:, D:, E:, Z:)
+- Navegue até o arquivo `.sql`
+- Clique em Carregar
 A query aparece formatada no editor
 
 🛠️ Atalhos
-Formatar SQL:	Ctrl + Shift + F
-Copiar Query:	Botão "Copiar Query"
-Executar:	Botão "Executar"
+- Formatar SQL: `Ctrl + Shift + F`
+- Copiar Query: Botão `Copiar Query`
+- Executar: Botão `Executar`
 
 🧠 Lógica de Formatação SQL
 O formatter:
-tokeniza a linha;
-normaliza espaços;
-ajusta caixa (upper/lower);
-calcula indentação;
-formata SELECTs com múltiplas colunas;
-respeita parênteses, funções e subqueries;
+- tokeniza a linha;
+- normaliza espaços;
+- ajusta caixa (upper/lower);
+- calcula indentação;
+- formata SELECTs com múltiplas colunas;
+- respeita parênteses, funções e subqueries;
 
 Exemplo:
 
@@ -157,6 +163,13 @@ Exemplo:
 `    COUNT(*)`
 `FROM tabela`
 `WHERE coluna3 = 'ABC'`
+`SELECT`
+`    coluna1,`
+`    SUM(coluna2),`
+`    COUNT(*)`
+`FROM tabela`
+`WHERE coluna3 = 'ABC'`
 
 📄 Licença
+- Open-source.
 - Open-source.

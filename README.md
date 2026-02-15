@@ -181,7 +181,7 @@ O arquivo .env deve estar na raiz do projeto.
 
 ## 7. ▶️ Como Executar
 
-`python parquetgen.py`
+`python parquetgen.py` ou `parquetgen.bat`
 
 ## 8. 📁 Importação de Query
 

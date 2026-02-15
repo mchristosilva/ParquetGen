@@ -136,7 +136,7 @@ ParquetGen/
 │   └── tokenizer.py
 │
 ├── img/
-│   └── icon.png
+│   └── icon.png                <= Favicon da aplicação, formato .png, 200px x 200px
 │
 ├── .env
 ├── connection.py

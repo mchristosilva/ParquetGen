@@ -413,7 +413,7 @@ class MainScreen(Screen):
 
 class MyApp(App):
 
-    title = "RedeSC - Gerador de arquivos Parquet"
+    title = "Gerador de arquivos Parquet"
     icon = "img/icon.png"
 
     def build(self):

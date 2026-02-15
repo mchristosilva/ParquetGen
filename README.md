@@ -160,9 +160,13 @@ ParquetGen/
 - Pandas
 - PyArrow
 
-Instalação:
+### Instalação:
 
+- clone o repositório 
+- crie uma `venv`
+- instale os requerimentos 
 `pip install -r requirements.txt`
+- instale o Oracle Instant Client (se necessário)
 
 ## 6. ⚙️ Estrutura do Arquivo .env
 

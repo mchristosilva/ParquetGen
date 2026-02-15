@@ -164,7 +164,7 @@ ParquetGen/
 
 - clone o repositório 
 - crie uma `venv`
-- instale os requerimentos 
+- instale os requerimentos  
 `pip install -r requirements.txt`
 - instale o Oracle Instant Client (se necessário)
 

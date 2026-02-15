@@ -1,85 +1,121 @@
-📘 README.md — Gerador de Arquivos Parquet
-
-# Gerador de Arquivos Parquet
-Aplicação desktop desenvolvida em **Python + Kivy**, criada para facilitar a
-geração de arquivos **Parquet** a partir de consultas SQL, com foco em
-produtividade, organização e integração com ambientes corporativos.
-
-A ferramenta inclui:
-- Editor SQL com **highlight profissional (Pygments + SqlLexer)**
-- Importação de arquivos `.sql`
-- Formatação automática de queries **(formatter modular)**
-- Execução de consultas
-- Geração de arquivos Parquet
-- Interface simples, leve e responsiva
+# 📘 Gerador de Arquivos Parquet  
+Aplicação desktop desenvolvida em Python + Kivy para facilitar a criação de arquivos Parquet a partir de consultas SQL.
+O objetivo é oferecer produtividade, organização e integração com ambientes corporativos, mantendo uma interface leve e direta.
 
 ---
 
-## 🖥️ Interface
-A aplicação possui uma interface clara e objetiva:
-- Caixa de texto para edição da query SQL
-- Botões de ação (`Executar`, `Limpar`, `Copiar`, `Abrir Pasta`, `Importar Query`)  
-- Popup de seleção de arquivos com **seletor de unidades**  
-- Log de execução
-- Placeholder no editor quando vazio  
+## 📑 Sumário
+1. Visão Geral
+2. Interface
+3. Funcionalidades
+4. Arquitetura do Projeto
+5. Requisitos
+6. Configuração do .env
+7. Como Executar
+8. Importação de Query
+9. Atalhos
+10. Lógica de Formatação SQL
+11. Licença
 
 ---
 
-## ✨ Funcionalidades
+1. 🔍 Visão Geral  
+
+O Gerador de Arquivos Parquet permite:
+
+- editar e formatar consultas SQL com highlight profissional;
+- importar arquivos .sql;
+- executar consultas em banco Oracle;
+- gerar arquivos Parquet de forma rápida;
+- organizar o fluxo de trabalho com logs, atalhos e interface responsiva.
+
+Ideal para analistas, engenheiros de dados e equipes que precisam transformar consultas SQL em datasets padronizados.
+
+---
+
+2. 🖥️ Interface  
+
+A interface foi projetada para ser simples e objetiva:
+
+- Editor SQL com highlight (Pygments + SqlLexer)
+- Placeholder automático quando o editor está vazio
+= Botões de ação:
+  - **Executar**
+  - **Limpar**
+  - **Copiar**
+  - **Abrir Pasta**
+  - **Importar Query**
+- Popup de seleção de arquivos com **seletor de unidades locais ou mapeadas**
+- Log de execução integrado
+
+---
+
+## 3. ✨ Funcionalidades
 
 ### ✔ Editor SQL com Highlight Profissional
-O editor utiliza:
+
+Baseado em:
 
 - `CodeInput` (Kivy)
 - `SqlLexer` (Pygments)
 
-Isso garante coloração de:
-- palavras‑chave (`SELECT`, `FROM`, `WHERE`, `JOIN`…)  
-- funções (`COUNT`, `SUM`, `MAX`…)  
-- strings  
-- números  
-- comentários  
+Com coloração para:
 
----
+- palavras‑chave (`SELECT`, `FROM`, `WHERE`, `JOIN`…)
+- funções (`COUNT`, `SUM`, `MAX`…)
+- strings
+- números
+- comentários
 
-### ✔ Placeholder no Editor
-Quando o campo está vazio, aparece: `Digite ou importe uma query SQL...`  
-Implementado via `canvas.after` para não interferir no cursor ou highlight.
+### ✔ Placeholder Inteligente
 
----
+Quando o editor está vazio, exibe:  
+
+`Digite ou importe uma query SQL...`
+
+Implementado via `canvas.after`, sem interferir no cursor ou no highlight.
 
 ### ✔ Importação de Arquivos SQL
+
 O usuário pode:
-- abrir um popup  
-- navegar entre unidades locais e unidades de rede mapeadas  
-- selecionar um arquivo `.sql`
-- carregar e formatar automaticamente
 
-O popup inclui um **seletor de unidades** acima do FileChooser.
+- abrir o popup de seleção
+- navegar entre unidades locais e de rede
+- escolher um arquivo .sql
+- carregar e formatar automaticamente o conteúdo
 
----
+O popup inclui um seletor de unidades acima do `FileChooser`.
 
 ### ✔ Formatação Automática de SQL
+
 O formatter é modular e composto por:
 
-- `indent.py`  
-- `normalizer.py`  
-- `processor.py`  
-- `select_formatter.py`  
-- `tokenizer.py`  
+- `indent.py`
+- `normalizer.py`
+- `processor.py`
+- `select_formatter.py`
+- `tokenizer.py`
 
-O arquivo `main.py` expõe: `formatar_sql_de_arquivo(caminho)`
+O módulo principal expõe:  
 
-E o editor usa: `Ctrl + Shift + F` para formatar o texto atual.
+`formatar_sql_de_arquivo(caminho)`  
 
-### Execução e Geração de Parquet
-A aplicação permite:
+No editor, o atalho:  
+
+`Ctrl + Shift + F`  
+
+formata o texto atual.
+
+### ✔ Execução e Geração de Arquivos Parquet  
+
+A aplicação permite:  
+
 - copiar a query formatada
-- executar a query
+- executar a consulta
 - gerar arquivos Parquet
-- abrir a pasta de saída
+- abrir a pasta de saída automaticamente
 
-🧩 Arquitetura do Projeto
+## 4. 🧩 Arquitetura do Projeto  
 
 <pre>
 ParquetGen/
@@ -99,7 +135,7 @@ ParquetGen/
 │   ├── select_formatter.py
 │   └── tokenizer.py
 │
-├── img
+├── img/
 │   └── icon.png
 │
 ├── .env
@@ -108,28 +144,28 @@ ParquetGen/
 ├── converte.py
 ├── format_query.py
 ├── listar_unidades.py
-├── log.py.py
+├── log.py
 ├── parquetgen.py
 ├── README.md
 ├── requirements.txt
 └── sql_query_editor.py
 </pre>
 
-📦 Requisitos
+## 5. 📦 Requisitos
+
 - Python 3.10+
 - Kivy
 - Pygments
 - Pandas
 - PyArrow
 
-# requirements.txt
+Instalação:
 
-`pip install -r requirements.txt`  
+`pip install -r requirements.txt`
 
-# Estrutura padrão do arquivo .env
-Para garantir a conexão com o banco de dados Oracle
- e o caminho de rede padrão, deve configurar as variáveis
- de ambiente em um arquivo .env a ser colocado na raiz do projeto
+## 6. ⚙️ Estrutura do Arquivo .env
+
+Para conexão com Oracle e definição do caminho padrão de rede:
 
 <pre>
 DB_USERNAME=
@@ -138,42 +174,50 @@ DB_HOST=
 DB_PORT=
 DB_SERVICE_NAME=
 CAMINHO_PADRAO=
-</pre>  
+</pre>
 
-▶️ Como Executar
+O arquivo .env deve estar na raiz do projeto.
 
-`python parquetgen.py`  
+## 7. ▶️ Como Executar
 
-📁 Importação de Query
-- Clique em Importar Query
-- Escolha a unidade (C:, D:, E:, Z:)
-- Navegue até o arquivo `.sql`
-- Clique em Carregar
-A query aparece formatada no editor
+`python parquetgen.py`
 
-🛠️ Atalhos
-- Formatar SQL: `Ctrl + Shift + F`
-- Copiar Query: Botão `Copiar Query`
-- Executar: Botão `Executar`
+## 8. 📁 Importação de Query
 
-🧠 Lógica de Formatação SQL
-O formatter:
-- tokeniza a linha;
-- normaliza espaços;
-- ajusta caixa (upper/lower);
-- calcula indentação;
-- formata SELECTs com múltiplas colunas;
-- respeita parênteses, funções e subqueries;
+1. Clique em **Importar Query**
+2. Escolha a unidade (C:, D:, E:, Z:)
+3. Navegue até o arquivo `.sql`
+4. Clique em Carregar
 
-Exemplo:  
+A query será exibida já **formatada** no editor.
+
+## 9. 🛠️ Atalhos  
+
+- **Formatar SQL**: `Ctrl + Shift + F`
+- **Copiar Query**: botão _Copiar Query_
+- **Executar**: botão _Executar_
+
+## 10. 🧠 Lógica de Formatação SQL  
+
+O formatter realiza:
+
+- tokenização da linha
+- normalização de espaços
+- ajuste de caixa (upper/lower)
+- cálculo de indentação
+- formatação de SELECTs com múltiplas colunas
+- respeito a parênteses, funções e subqueries
+
+Exemplo:
+
 <pre>
-SELECT`
+SELECT
     coluna1,
     SUM(coluna2),
     COUNT(*)
 FROM tabela
 WHERE coluna3 = 'ABC'
-</pre>  
+</pre>
 
-📄 Licença
-- Open-source
+## 11. 📄 Licença
+Open-source

@@ -111,6 +111,7 @@ ParquetGen/
 - PyArrow
 
 Instalação
+
 `pip install -r requirements.txt`
 
 # Estrutura padrão do arquivo .env
@@ -118,18 +119,18 @@ Para garantir a conexão com o banco de dados Oracle
  e o caminho de rede padrão, deve configurar as variáveis
  de ambiente em um arquivo .env a ser colocado na raiz do projeto
 
- <pre>
+<pre>
 DB_USERNAME=
 DB_PASSWORD=
 DB_HOST=
 DB_PORT=
 DB_SERVICE_NAME=
 CAMINHO_PADRAO=
- </pre>
+</pre>
 
 
 ▶️ Como Executar
-`python parquetgen.py`
+
 `python parquetgen.py`
 
 📁 Importação de Query

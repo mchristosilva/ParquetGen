@@ -43,10 +43,7 @@ Isso garante coloração de:
 ---
 
 ### ✔ Placeholder no Editor
-Quando o campo está vazio, aparece:
-Digite ou importe uma query SQL...
-
-Código
+Quando o campo está vazio, aparece: `Digite ou importe uma query SQL...`  
 Implementado via `canvas.after` para não interferir no cursor ou highlight.
 
 ---
@@ -105,7 +102,7 @@ ParquetGen/
 ├── img
 │   └── icon.png
 │
-├── **.env**
+├── .env
 ├── connection.py
 ├── consulta.py
 ├── converte.py
@@ -125,9 +122,9 @@ ParquetGen/
 - Pandas
 - PyArrow
 
-# Instalação  
+# requirements.txt
 
-`pip install -r requirements.txt`
+`pip install -r requirements.txt`  
 
 # Estrutura padrão do arquivo .env
 Para garantir a conexão com o banco de dados Oracle
@@ -141,12 +138,11 @@ DB_HOST=
 DB_PORT=
 DB_SERVICE_NAME=
 CAMINHO_PADRAO=
-<pre>
-
+</pre>  
 
 ▶️ Como Executar
 
-`python parquetgen.py`
+`python parquetgen.py`  
 
 📁 Importação de Query
 - Clique em Importar Query
@@ -169,21 +165,15 @@ O formatter:
 - formata SELECTs com múltiplas colunas;
 - respeita parênteses, funções e subqueries;
 
-Exemplo:
-
-`SELECT`
-`    coluna1,`
-`    SUM(coluna2),`
-`    COUNT(*)`
-`FROM tabela`
-`WHERE coluna3 = 'ABC'`
-`SELECT`
-`    coluna1,`
-`    SUM(coluna2),`
-`    COUNT(*)`
-`FROM tabela`
-`WHERE coluna3 = 'ABC'`
+Exemplo:  
+<pre>
+SELECT`
+    coluna1,
+    SUM(coluna2),
+    COUNT(*)
+FROM tabela
+WHERE coluna3 = 'ABC'
+</pre>  
 
 📄 Licença
-- Open-source.
-- Open-source.
+- Open-source

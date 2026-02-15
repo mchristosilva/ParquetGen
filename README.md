@@ -87,20 +87,34 @@ A aplicação permite:
 <pre>
 ParquetGen/
 │
+├── fonts/
+│   ├── CONSOLA.TTF
+│   ├── CONSOLAB.TTF
+│   ├── CONSOLAI.TTF
+│   ├── CONSOLAZ.TTF
+│
 ├── formatter/
 │   ├── __init__.py
-│   ├── main.py
-│   ├── processor.py
-│   ├── tokenizer.py
-│   ├── normalizer.py
 │   ├── indent.py
-│   └── select_formatter.py
+│   ├── main.py
+│   ├── normalizer.py
+│   ├── processor.py
+│   ├── select_formatter.py
+│   └── tokenizer.py
 │
-├── sql_query_editor.py
-├── tela.py
-├── main.py
+├── img
+│   └── icon.png
+│
+├── connection.py
+├── consulta.py
+├── converte.py
+├── format_query.py
+├── listar_unidades.py
+├── log.py.py
+├── parquetgen.py
+├── README.md
 ├── requirements.txt
-└── README.md
+└── sql_query_editor.py
 </pre>
 
 📦 Requisitos
@@ -110,7 +124,7 @@ ParquetGen/
 - Pandas
 - PyArrow
 
-Instalação
+# Instalação
 
 `pip install -r requirements.txt`
 
@@ -126,7 +140,7 @@ DB_HOST=
 DB_PORT=
 DB_SERVICE_NAME=
 CAMINHO_PADRAO=
-</pre>
+<pre>
 
 
 ▶️ Como Executar

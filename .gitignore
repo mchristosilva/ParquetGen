@@ -14,3 +14,9 @@ log/
 *.sqbpro
 .env
 .hintrc
+dialeto.py
+executor.py
+parse.py
+sql.py
+table.py
+utils.py

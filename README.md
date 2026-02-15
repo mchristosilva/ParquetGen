@@ -124,7 +124,7 @@ ParquetGen/
 - Pandas
 - PyArrow
 
-# Instalação
+# Instalação  
 
 `pip install -r requirements.txt`
 

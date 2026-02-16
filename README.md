@@ -37,9 +37,9 @@ Ideal para analistas, engenheiros de dados e equipes que precisam transformar co
 
 A interface foi projetada para ser simples e objetiva:
 
-- Editor SQL com highlight (Pygments + SqlLexer)
+- Editor SQL com highlight
 - Placeholder automático quando o editor está vazio
-= Botões de ação:
+- Botões de ação:
   - **Executar**
   - **Limpar**
   - **Copiar**

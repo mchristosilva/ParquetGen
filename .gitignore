@@ -21,4 +21,4 @@ parse.py
 sql.py
 table.py
 utils.py
-.parquet
+*.parquet

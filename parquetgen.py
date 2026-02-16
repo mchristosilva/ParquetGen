@@ -55,7 +55,7 @@ class MainScreen(Screen):
         layout.add_widget(self.path_label)
 
         self.folder_input = self.make_input(
-            "Subpasta que será criada dentro da pasta padrão (ex: Beira_leito\\2025)")
+            "Subpasta que será criada dentro da pasta padrão (ex: PastaOrganizada\\2025)")
         layout.add_widget(self.folder_input)
 
         self.file_input = self.make_input(

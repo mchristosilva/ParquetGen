@@ -23,10 +23,11 @@ O objetivo é oferecer produtividade, organização e integração com ambientes
 
 O Gerador de Arquivos Parquet permite:
 
-- editar e formatar consultas SQL com highlight profissional;
-- importar arquivos .sql;
+- editar e formatar consultas SQL com highlight;
+- importar arquivos `.sql`;
 - executar consultas em banco Oracle;
 - gerar arquivos Parquet de forma rápida;
+- identificar erros na consulta, com **EXPLAIN PLAN**
 - organizar o fluxo de trabalho com logs, atalhos e interface responsiva.
 
 Ideal para analistas, engenheiros de dados e equipes que precisam transformar consultas SQL em datasets padronizados.
@@ -46,7 +47,9 @@ A interface foi projetada para ser simples e objetiva:
   - **Abrir Pasta**
   - **Importar Query**
 - Popup de seleção de arquivos com **seletor de unidades locais ou mapeadas**
-- Log de execução integrado
+- Log de execução integrado  
+
+![Interface](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_01.png)
 
 ---
 
@@ -67,6 +70,8 @@ Com coloração para:
 - números
 - comentários
 
+![Interface_com_cores](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_02.png)
+
 ### ✔ Placeholder Inteligente
 
 Quando o editor está vazio, exibe:  
@@ -85,6 +90,8 @@ O usuário pode:
 - carregar e formatar automaticamente o conteúdo
 
 O popup inclui um seletor de unidades acima do `FileChooser`.
+
+![Navegador de arquivos](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_003.png)
 
 ### ✔ Formatação Automática de SQL
 
@@ -105,10 +112,28 @@ O módulo principal expõe:
 A aplicação permite:  
 
 - copiar a query formatada
+- analisar a sintaxe da consulta para verificação de erros
 - executar a consulta
 - gerar arquivos Parquet
 - abrir a pasta de saída automaticamente
 
+Exemplos:
+
+⛔*Consulta com ponto e vírgula declarado*    
+
+![](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_05.png)  
+
+---
+⛔*Consulta sem FROM*    
+
+![](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_04.png)  
+
+---
+✅*Query analisada, sem erros*    
+
+![](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_07.png)  
+
+---
 ## 4. 🧩 Arquitetura do Projeto  
 
 <pre>
@@ -198,6 +223,8 @@ ou crie um atalho para o Desktop para:
 4. Clique em Carregar
 
 A query será exibida já **formatada** no editor.
+
+![Importação](https://github.com/mchristosilva/Img_reps/blob/main/Parquetgen/parquet_07.png)
 
 ## 9. 🛠️ Atalhos  
 

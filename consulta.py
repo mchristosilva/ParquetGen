@@ -5,7 +5,7 @@ import traceback
 from connection import DBManager
 import os
 from log import _log, configurar_log_para_arquivo, CAMINHO
-from format_query import formatar_sql, limpar_comentarios
+from formatter.regex_formatter import limpar_comentarios, formatar_sql
 
 
 def roda_consulta(query, caminho_relativo):

@@ -120,18 +120,19 @@ A aplicação permite:
 <pre>
 ParquetGen/
 │
-├── fonts/
+├── fonts/                      <= Pacote do motor de formatação SQL
 │   ├── CONSOLA.TTF
 │   ├── CONSOLAB.TTF
 │   ├── CONSOLAI.TTF
 │   └── CONSOLAZ.TTF
 │
-├── formatter/
+├── formatter/                  <= Pacote do motor de formatação SQL
 │   ├── __init__.py
 │   ├── indent.py
 │   ├── main.py
 │   ├── normalizer.py
 │   ├── processor.py
+|   ├── regex_formatter.py
 │   ├── select_formatter.py
 │   └── tokenizer.py
 │
@@ -139,60 +140,66 @@ ParquetGen/
 │   └── icon.png                <= Favicon da aplicação, formato .png, 200px x 200px
 │
 ├── .env
-├── connection.py
-├── consulta.py
-├── converte.py
-├── format_query.py
-├── listar_unidades.py
-├── log.py
+├── connection.py               <= Utilitário de conexão com o Banco e motor SQL
+├── consulta.py                 <= Utilitário validador da consulta
+├── listar_unidades.py          <= Utilitário para varredura de unidades do computador
+├── log.py                      <= Utilitário gerador de logs
 ├── parquetgen.py
-├── README.md
+├── README.md                   <= Instruções
 ├── requirements.txt
-└── sql_query_editor.py
+└── sql_query_editor.py         <= Editor SQL simples
 </pre>
 
 ## 5. 📦 Requisitos
 
-- Oracle Instant Client
 - Python 3.10+
-- Kivy
-- Pygments
-- Pandas
-- PyArrow
+- Requerimentos do arquivo `requirements.txt`
+- Oracle Instant Client
 
 ### Instalação:
 
 - clone o repositório 
-- crie uma `venv`
-- instale os requerimentos  
-`pip install -r requirements.txt`
+- crie um virtual environment `venv`
+- ative o virtual environment
+- instale os requerimentos a partir do arquivo `requirements.txt`  
+
+``` python
+
+pip install -r requirements.txt
+
+```
+
 - instale o Oracle Instant Client (se necessário)
 
 ## 6. ⚙️ Estrutura do Arquivo .env
 
 Para conexão com Oracle e definição do caminho padrão de rede:
 
-<pre>
+``` python
+
 DB_USERNAME=
 DB_PASSWORD=
 DB_HOST=
 DB_PORT=
 DB_SERVICE_NAME=
 CAMINHO_PADRAO=
-</pre>
+
+```
 
 O arquivo .env deve estar na raiz do projeto.
 
 ## 7. ▶️ Como Executar
 
-`python parquetgen.py`  
-ou crie um atalho para Desktop para:  
+`python parquetgen.py`
+
+ou crie um atalho para o Desktop para:  
+
 `parquetgen.bat`
 
 ## 8. 📁 Importação de Query
 
 1. Clique em **Importar Query**
-2. Escolha a unidade (C:, D:, E:, Z:)
+2. Escolha a unidade (C:, D:, E:, etc...)
 3. Navegue até o arquivo `.sql`
 4. Clique em Carregar
 
@@ -206,7 +213,7 @@ A query será exibida já **formatada** no editor.
 
 ## 10. 🧠 Lógica de Formatação SQL  
 
-O formatter realiza:
+O formatter realiza:  
 
 - tokenização da linha
 - normalização de espaços
@@ -215,16 +222,19 @@ O formatter realiza:
 - formatação de SELECTs com múltiplas colunas
 - respeito a parênteses, funções e subqueries
 
-Exemplo:
+Exemplo:  
 
-<pre>
+``` sql
+
 SELECT
     coluna1,
     SUM(coluna2),
     COUNT(*)
 FROM tabela
 WHERE coluna3 = 'ABC'
-</pre>
 
-## 11. 📄 Licença
+```
+
+## 11. 📄 Licença  
+
 Open-source

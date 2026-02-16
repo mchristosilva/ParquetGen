@@ -81,7 +81,7 @@ O usuário pode:
 
 - abrir o popup de seleção
 - navegar entre unidades locais e de rede
-- escolher um arquivo .sql
+- escolher um arquivo `.sql`
 - carregar e formatar automaticamente o conteúdo
 
 O popup inclui um seletor de unidades acima do `FileChooser`.

@@ -100,12 +100,6 @@ O módulo principal expõe:
 
 `formatar_sql_de_arquivo(caminho)`  
 
-No editor, o atalho:  
-
-`Ctrl + Shift + F`  
-
-formata o texto atual.
-
 ### ✔ Execução e Geração de Arquivos Parquet  
 
 A aplicação permite:  
@@ -207,9 +201,11 @@ A query será exibida já **formatada** no editor.
 
 ## 9. 🛠️ Atalhos  
 
-- **Formatar SQL**: `Ctrl + Shift + F`
-- **Copiar Query**: botão _Copiar Query_
-- **Executar**: botão _Executar_
+- **Executar**: botão _Executar_                     <= Executa a query importada ou digitada no **Editor**
+- **Importar Query**: botão _Importar Query_         <= Abre navegador de arquivos e pastas e importa arquivo `.sql` para alteração ou execução
+- **Limpar**: botão _Limpar_                         <= Limpa caixas de texto, **pós-execução**
+- **Copiar Query**: botão _Copiar Query_             <= Copia a query da caixa de edição para a área de transferência
+- **Abrir Pasta**: botão _Abrir Pasta_               <= Abre a pasta dos arquivos gerados, **pós-execução**
 
 ## 10. 🧠 Lógica de Formatação SQL  
 

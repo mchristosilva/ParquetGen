@@ -114,7 +114,7 @@ A aplicação permite:
 <pre>
 ParquetGen/
 │
-├── fonts/                      <= Pacote do motor de formatação SQL
+├── fonts/                      <= Fonte true-type padrão
 │   ├── CONSOLA.TTF
 │   ├── CONSOLAB.TTF
 │   ├── CONSOLAI.TTF

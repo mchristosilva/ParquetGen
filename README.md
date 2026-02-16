@@ -133,14 +133,14 @@ ParquetGen/
 ├── img/
 │   └── icon.png                <= Favicon da aplicação, formato .png, 200px x 200px
 │
-├── .env
+├── .env                        <= Arquivo com variáveis de ambiente
 ├── connection.py               <= Utilitário de conexão com o Banco e motor SQL
 ├── consulta.py                 <= Utilitário validador da consulta
 ├── listar_unidades.py          <= Utilitário para varredura de unidades do computador
 ├── log.py                      <= Utilitário gerador de logs
-├── parquetgen.py
+├── parquetgen.py               <= Arquivo principal da aplicação
 ├── README.md                   <= Instruções
-├── requirements.txt
+├── requirements.txt            <= Requirements
 └── sql_query_editor.py         <= Editor SQL simples
 </pre>
 

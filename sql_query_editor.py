@@ -17,7 +17,7 @@ class SQLTextEditor(BoxLayout):
         self.text_input = CodeInput(
             lexer=SqlLexer(),
             font_name=true_type_font,
-            font_size=16,
+            font_size=9,
             tab_width=4,
             auto_indent=True,
             multiline=True,

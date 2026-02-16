@@ -37,9 +37,9 @@ Ideal para analistas, engenheiros de dados e equipes que precisam transformar co
 
 A interface foi projetada para ser simples e objetiva:
 
-- Editor SQL com highlight (Pygments + SqlLexer)
+- Editor SQL com highlight
 - Placeholder automático quando o editor está vazio
-= Botões de ação:
+- Botões de ação:
   - **Executar**
   - **Limpar**
   - **Copiar**
@@ -81,7 +81,7 @@ O usuário pode:
 
 - abrir o popup de seleção
 - navegar entre unidades locais e de rede
-- escolher um arquivo .sql
+- escolher um arquivo `.sql`
 - carregar e formatar automaticamente o conteúdo
 
 O popup inclui um seletor de unidades acima do `FileChooser`.
@@ -114,7 +114,7 @@ A aplicação permite:
 <pre>
 ParquetGen/
 │
-├── fonts/                      <= Pacote do motor de formatação SQL
+├── fonts/                      <= Fonte true-type padrão
 │   ├── CONSOLA.TTF
 │   ├── CONSOLAB.TTF
 │   ├── CONSOLAI.TTF
@@ -133,14 +133,14 @@ ParquetGen/
 ├── img/
 │   └── icon.png                <= Favicon da aplicação, formato .png, 200px x 200px
 │
-├── .env
+├── .env                        <= Arquivo com variáveis de ambiente
 ├── connection.py               <= Utilitário de conexão com o Banco e motor SQL
 ├── consulta.py                 <= Utilitário validador da consulta
 ├── listar_unidades.py          <= Utilitário para varredura de unidades do computador
 ├── log.py                      <= Utilitário gerador de logs
-├── parquetgen.py
+├── parquetgen.py               <= Arquivo principal da aplicação
 ├── README.md                   <= Instruções
-├── requirements.txt
+├── requirements.txt            <= Requirements
 └── sql_query_editor.py         <= Editor SQL simples
 </pre>
 
